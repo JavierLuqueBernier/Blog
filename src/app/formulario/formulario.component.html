@@ -5,15 +5,8 @@
                 <div class="form-group">
                     <label>Titulo</label>
                     <input type="text" class="form-control" formControlName="titulo">
-                    <p class="error"
-                        *ngIf="formulario.controls.titulo.errors?.required && formulario.controls.titulo.touched">
-                        El campo Titulo es requerido
-                    </p>
-                    <p class="error" *ngIf="formulario.controls.titulo.errors?.maxlength && formulario.controls.titulo.dirty">
-                        El campo nombre debe tener una longitud máxima de
-                        {{ formulario.controls.titulo.errors.maxlength.requiredLength }} y tú estás introduciendo
-                        {{ formulario.controls.titulo.errors.maxlength.actualLength }} caracteres
-                    </p>
+                    <!--<p class="error" *ngIf="formulario.controls.titulo.errors?.required && formulario.controls.titulo.touched"></p> -->
+                    <!--<p class="error" *ngIf="formulario.controls.titulo.errors?.maxlength && formulario.controls.titulo.dirty"></p> -->
                 </div>
                 <div class="form-group">
                     <label>Texto</label>
@@ -37,7 +30,6 @@
                 </div>
     
                 <input type="submit" value="Enviar" class="btn btn-block btn-success" />
-                <p class="error" *ngIf="formularioEnviado && !formulario.valid">Rellena bien los campos</p> 
             </form>
             <div class="col-6" id="logo">
                 <div class="logoContainer"><img src="https://pngimage.net/wp-content/uploads/2018/06/pokemon-logo-png-8.png" alt=""></div>

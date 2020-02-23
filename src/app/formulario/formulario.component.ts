@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Post } from '../models/Post';
 import { BlogService } from '../blog.service';
 import { Router } from '@angular/router';
 
