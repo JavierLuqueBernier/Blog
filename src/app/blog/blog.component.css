@@ -1,0 +1,20 @@
+.wrapper {
+    padding: 1em;
+}
+
+.contenedorImagen {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.contenedorImagen img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+}

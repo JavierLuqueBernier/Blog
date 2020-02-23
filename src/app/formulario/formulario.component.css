@@ -1,0 +1,28 @@
+.container {
+    position: relative;
+}
+
+.logoContainer {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.logoContainer img {
+    width: 100%;
+}
+
+input.ng-valid.ng-touched {
+    border: 1px solid green;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.error {
+    color: var(--rojo);
+}

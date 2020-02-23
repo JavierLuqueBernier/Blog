@@ -1,0 +1,47 @@
+
+<div class="container" id="formulario">
+    <div class="row">
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="col-6">
+                <div class="form-group">
+                    <label>Titulo</label>
+                    <input type="text" class="form-control" formControlName="titulo">
+                    <p class="error"
+                        *ngIf="formulario.controls.titulo.errors?.required && formulario.controls.titulo.touched">
+                        El campo Titulo es requerido
+                    </p>
+                    <p class="error" *ngIf="formulario.controls.titulo.errors?.maxlength && formulario.controls.titulo.dirty">
+                        El campo nombre debe tener una longitud máxima de
+                        {{ formulario.controls.titulo.errors.maxlength.requiredLength }} y tú estás introduciendo
+                        {{ formulario.controls.titulo.errors.maxlength.actualLength }} caracteres
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label>Texto</label>
+                    <input type="text" class="form-control" formControlName="texto">
+                </div>
+                <div class="form-group">
+                    <label>Autor</label>
+                    <input type="text" class="form-control" formControlName="autor">
+                </div>
+                <div class="form-group">
+                    <label>Imagen</label>
+                    <input type="text" class="form-control" formControlName="imagen">
+                </div>
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <select formControlName="categoria">
+                            <option value="serCuqui">Ser Cuqui</option>
+                            <option value="hipnotismo">Hipnotismo</option>
+                            <option value="follarteLaMente">Follarte la Mente</option>
+                    </select>
+                </div>
+    
+                <input type="submit" value="Enviar" class="btn btn-block btn-success" />
+                <p class="error" *ngIf="formularioEnviado && !formulario.valid">Rellena bien los campos</p> 
+            </form>
+            <div class="col-6" id="logo">
+                <div class="logoContainer"><img src="https://pngimage.net/wp-content/uploads/2018/06/pokemon-logo-png-8.png" alt=""></div>
+            </div>
+    </div>
+</div>
+

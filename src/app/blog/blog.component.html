@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <div>
+        <h5>Categoria</h5>
+    
+        <select name="" id="categoria" (change)="manejarFiltro($event)">
+            <option value="eligeCategoria">Elige Categoria</option>
+            <option value="serCuqui">Ser Cuqui</option>
+            <option value="hipnotismo">Hipnotismo</option>
+            <option value="follarteLaMente">Follarte La Mente</option>
+        </select>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let post of listaPost" class="col-4 text-center">
+                <h3>{{ post.titulo }}</h3>
+                <p>Texto: {{ post.texto }}</p>
+                <div class="contenedorImagen">
+                    <img src="{{ post.imagen }}" alt="">
+                </div>
+                <p>{{ post.fecha | date: 'dd/MM/y HH:mm.ss' }}</p>
+                <!-- <button type="button" (click)="borrarPost()" class="btn btn-danger" ><i data-id=`${post.id}`></i>Borrar</button> -->
+            </div>
+        </div>
+    </div>
+</div>
