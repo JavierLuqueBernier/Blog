@@ -12,6 +12,11 @@ export class BlogService {
 
   constructor() {
     this.id = 4
+    if(localStorage.getItem('blogsLS')) {
+      this.arrPost = JSON.parse(localStorage.getItem('blogsLS')) //comprobamos si ya hay algo en local storage
+    } else {                                                     // y si no creamos un array vacio
+      this.arrPost = [];
+    }
 
     this.arrPost = [
       // tslint:disable-next-line: max-line-length
@@ -26,6 +31,7 @@ export class BlogService {
   agregarPost($event) { let Post = {...$event}
     this.arrPost.unshift(Post); // Unshift es para que en lugar de agregarse al final de la lista, los nuevos elementos se agreguen al inicio
     this.id++;
+    localStorage.setItem('blogsLS', JSON.stringify(this.arrPost))
     return this.getAllPosts();
     
   }
